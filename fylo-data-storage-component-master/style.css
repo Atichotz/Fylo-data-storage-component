@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root{
+    /* ### Primary */
+
+    --Gradient1: hsl(6, 100%, 80%);
+    --Gradient2:hsl(335, 100%, 65%);
+
+    /* ### Neutral */
+
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --VeryDark-Blue: hsl(229, 57%, 11%);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-color: #0c122c;
+    animation: fadeIn 1s;
+}
+.card-l{
+    transition: all 1s ease;
+    display: flex;
+    width: 29.5rem;
+    height: 17rem;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
+    border-radius: 0.9rem;
+    border-top-right-radius: 150px;
+    background-color: var(--Dark-Blue);
+}
+.card-l .logo-icon{
+    margin-top: 1.5rem;
+}
+.card-l .logo-icon .logo{
+    width: 11.5rem;
+    height: 3.4rem;
+}
+.card-l .icon-another :where(img){
+    margin: 0 1rem 0 0;
+    padding: 1rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 10px;
+    object-fit: contain;
+    background-color: #0c122c;
+}
+.card-r{
+    vertical-align: center;
+    top: 2rem;
+    padding: 2rem;
+    width: 45.1rem;
+    height: 13rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: var(--Dark-Blue);
+    color: white;
+    transition: all 1s ease;
+}
+.card-r .storage-left-group{
+    position: relative;
+    height: 0.1px;
+    display: flex;
+    justify-content: flex-end;
+}
+.card-r .storage-left-group:hover :where(.storage-left,.tiangle){
+    transform: translate(-1px,-3px);
+    box-shadow: 15px 3px 14px -6px rgba(0,0,0,0.42);
+}
+.card-r .storage-left{
+    font-weight: 700;
+    height: 4.6rem;
+    width: 11.3rem;
+    position: relative;
+    bottom: 11.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color:var(--Grayish-Blue);
+    background-color: white;
+    transition: transform 0.3s,box-shadow 0.3s;
+}
+.card-r .storage-left .amount{
+    font-size: 45px;
+    margin-right: 0.6rem;
+    color: black;
+}
+.card-r .tiangle{
+    position: relative;
+    bottom: 7.4rem;
+    right: 1.6rem;
+    border-left: 1.6rem solid transparent;
+    border-top: 2.4rem solid white;
+    transition: transform 0.3s,box-shadow 0.3s;
+}
+.card-r .storage-used{
+    font-weight: 700;
+    color: white;
+}
+
+.card-r .progress-bar{
+    margin: 1rem 0 0.5rem 0;
+    display: flex;
+    height: 1.3rem;
+    padding: 0.2rem;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    background-color: var(--VeryDark-Blue);
+    transition: all 1s ease;
+}
+.card-r .progress-bar .progress-bar-color{
+    display: flex;
+    height: 100%;
+    width: 75%;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 0.9rem;
+    background:linear-gradient(90deg,rgb(255, 196, 0) ,rgb(107, 255, 248));
+    transition: width 1s ease,height 1s;
+}
+.card-r .progress-bar .progress-bar-color .dot{
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 1rem;
+    background-color: white;
+    margin-right: 0.1rem;
+}
+.card-r .footer{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+}
+.icon-another img{
+    transition: transform 0.3s,box-shadow 0.3s;
+    cursor:pointer;
+}
+.icon-another img:hover{
+    transform: translate(-1px,-3px);
+    box-shadow: 9px 8px 14px -6px rgba(0,0,0,0.42);
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
+@media only screen and (max-width:600px){
+    .container{
+        background-image: url(images/bg-mobile.png);
+        flex-direction:column;
+    }
+    .card-l{
+        width: 90%;
+        margin: 0
+    }
+    .card-r{
+        width: 90%;
+    }
+
+}
+@media only screen and (max-width:375px) {
+    .card-r .storage-left{
+        bottom: 0px;
+        top: 30px;
+        right: 25px;
+    }
+    .tiangle{
+        opacity: 0;
+    }
+}
